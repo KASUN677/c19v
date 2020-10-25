@@ -26,7 +26,7 @@ services:
         "curl -d '{\"seed\":\"${AGENT_WALLET_SEED}\", \"role\":\"TRUST_ANCHOR\", \"alias\":\"BC Email Verifier (Docker)\"}' -X POST http://test.bcovrin.vonx.io/register; \
         sleep 5; \
         aca-py start \
-        -it http '0.0.0.0' 10000 \
+        -it http '0.0.0.0' 11000 \
         -ot http \
         --admin '0.0.0.0' 4000 \
         -e $SITE_URL \
@@ -48,7 +48,7 @@ services:
       - iiw-book-agent
     environment:
       PORT: 8080
-      INDY_EMAIL_VERIFIER_DID: Th7MpTaRZVRYnPiabds81Y
+      INDY_EMAIL_VERIFIER_DID: 6sRcFZejVPzDh1P4HV44eN
       SITE_URL: http://localhost:8080
       AGENT_URL: "http://iiw-book-agent:4000"
       DEBUG: "true"

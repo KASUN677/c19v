@@ -259,7 +259,7 @@ def webhooks(request, topic):
         request_body = {
             "connection_id": connection_id,
             "proof_request": {
-                "name": "BC Gov Verified Email",
+                "name": "ON Verified HCN",
                 "version": "1.0.0",
                 "requested_predicates": {},
                 "requested_attributes": {
@@ -269,11 +269,7 @@ def webhooks(request, topic):
                             {
                                 "issuer_did": INDY_EMAIL_VERIFIER_DID,
                                 "schema_name": "verified-email",
-                            },
-                            {
-                                "issuer_did": "85459GxjNySJ8HwTTQ4vq7",
-                                "schema_name": "verified_person",
-                            },
+                            }
                         ],
                     }
                 },
