@@ -11,10 +11,10 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="shortcut icon" href="{% static 'favicon.ico' %}" />
-    <title>ConfBook Attendance Issuer</title>
+    <title>COVID 19 viwer</title>
     <meta
       name="description"
-      content="A verification service used to issue a verifiable credential asserting a requester is an IIW 28 Attendee based on their verified email address."
+      content="A verification service used to issue a verifiable credential asserting COVID status on the HCN holder."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -35,7 +35,7 @@
         <!-- Navbar content -->
         <div class="container">
           <a class="navbar-brand" href="/" style="font-size:2em">
-            ConfBook
+            COVID viewer
           </a>
         </div>
       </nav>
@@ -52,7 +52,7 @@
                 <input type="name" class="form-control" name="name" id="name" placeholder="Jane Jones" required>
               </div>
               <div class="form-group">
-                <label for="conference">Select a conference</label>
+                <label for="conference">COVID Status</label>
                 <select class="form-control" id="conference" name="conference" required>
                   {% for conference in conferences %}
                   <option value="{{conference}}">{{conference}}</option>
