@@ -48,7 +48,7 @@ services:
       - iiw-book-agent
     environment:
       PORT: 8080
-      INDY_EMAIL_VERIFIER_DID: 6sRcFZejVPzDh1P4HV44eN
+      INDY_EMAIL_VERIFIER_DID: GJ2BJRLV6iqRS7dyx5sUDp
       SITE_URL: http://localhost:8080
       AGENT_URL: "http://iiw-book-agent:4000"
       DEBUG: "true"
