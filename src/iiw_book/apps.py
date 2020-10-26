@@ -26,7 +26,7 @@ class IIWBookConfig(AppConfig):
             schema_body = {
                 "schema_name": "covid_status",
                 "schema_version": "1.0.0",
-                "attributes": ["email","time"],
+                "attributes": ["email","hcn","dob","gender","covid-status","time"],
             }
             schema_response = requests.post(f"{AGENT_URL}/schemas", json=schema_body)
 

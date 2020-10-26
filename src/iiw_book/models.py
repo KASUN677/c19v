@@ -8,7 +8,10 @@ class Attendee(models.Model):
     conference = models.TextField(default=None, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
-
+    hcn = models.CharField(max_length=100)
+    dob = models.CharField(max_length=100)
+    gender = models.CharField(max_length=10)
+    covid = models.CharField(max_length=10)
 
 class SessionState(models.Model):
     connection_id = models.UUIDField()

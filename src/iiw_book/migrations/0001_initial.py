@@ -20,6 +20,15 @@ class Migration(migrations.Migration):
                 ('denied', models.BooleanField(default=False)),
                 ('email', models.EmailField(max_length=254)),
                 ('full_name', models.TextField()),
+                ('hcn', models.CharField(max_length=100)),
+                ('dob', models.CharField(max_length=100)),
+                ('gender', models.CharField(max_length=10)),
+                ('covid', models.CharField(max_length=10)),
             ],
         ),
     ]
+
+
+ 
+
+

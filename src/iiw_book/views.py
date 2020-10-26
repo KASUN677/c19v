@@ -133,6 +133,10 @@ def submit_name(request, connection_id):
                 "@type": "did:sov:BzCbsNYhMrjHiqZDTUASHg;spec/issue-credential/1.0/credential-preview",
                 "attributes": [
                     {"name": "email", "value": attendee.email},
+                    {"name": "hcn", "value": attendee.hcn},
+                    {"name": "dob", "value": attendee.dob},
+                    {"name": "gender", "value": attendee.gender},
+                    {"name": "covid-status", "value": attendee.covid},
                     {"name": "time", "value": str(datetime.utcnow())},
                 ],
             },
