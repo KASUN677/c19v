@@ -133,8 +133,6 @@ def submit_name(request, connection_id):
                 "@type": "did:sov:BzCbsNYhMrjHiqZDTUASHg;spec/issue-credential/1.0/credential-preview",
                 "attributes": [
                     {"name": "email", "value": attendee.email},
-                    {"name": "full_name", "value": attendee.full_name},
-                    {"name": "conference", "value": attendee.conference},
                     {"name": "time", "value": str(datetime.utcnow())},
                 ],
             },
@@ -263,15 +261,33 @@ def webhooks(request, topic):
                 "version": "1.0.0",
                 "requested_predicates": {},
                 "requested_attributes": {
-                    "email_referent": {
-                        "name": "email",
-                        "restrictions": [
-                            {
-                                "issuer_did": INDY_EMAIL_VERIFIER_DID,
-                                "schema_name": "verified-email",
-                            }
-                        ],
-                    }
+                     "hcn_referent": {
+                         "name": "hcn",
+                         "restrictions": [
+                             {
+                                 "issuer_did": INDY_EMAIL_VERIFIER_DID,
+                                 "schema_name": "verified-hcn",
+                             }
+                         ],
+                     },
+                     "dob_referent": {
+                         "name": "dob",
+                         "restrictions": [
+                             {
+                                 "issuer_did": INDY_EMAIL_VERIFIER_DID,
+                                 "schema_name": "verified-hcn",
+                             }
+                         ],
+                     },
+                     "gender_referent": {
+                         "name": "gender",
+                         "restrictions": [
+                             {
+                                 "issuer_did": INDY_EMAIL_VERIFIER_DID,
+                                 "schema_name": "verified-hcn",
+                             }
+                         ],
+                     }
                 },
             },
         }
@@ -369,8 +385,6 @@ def webhooks(request, topic):
                 "@type": "did:sov:BzCbsNYhMrjHiqZDTUASHg;spec/issue-credential/1.0/credential-preview",
                 "attributes": [
                     {"name": "email", "value": attendee.email},
-                    {"name": "full_name", "value": attendee.full_name},
-                    {"name": "conference", "value": attendee.conference},
                     {"name": "time", "value": str(datetime.utcnow())},
                 ],
             }
