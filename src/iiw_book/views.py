@@ -337,6 +337,7 @@ def webhooks(request, topic):
 
         # HACK: we need a better way to pull values out of presentations
         revealed_attrs = message["presentation"]["requested_proof"]["revealed_attrs"]
+
         for revealed_attr in revealed_attrs.values():
             email = revealed_attr["raw"]
 
@@ -345,6 +346,9 @@ def webhooks(request, topic):
         except Attendee.DoesNotExist:
             attendee = Attendee(email=email)
         attendee.connection_id = connection_id
+        attendee.hcn= message["presentation"]["requested_proof"]["revealed_attrs"]["hcn_referent"]["raw"]
+        attendee.dob= message["presentation"]["requested_proof"]["revealed_attrs"]["dob_referent"]["raw"]
+        attendee.gender= message["presentation"]["requested_proof"]["revealed_attrs"]["gender_referent"]["raw"]
         # attendee.approved = False
         # attendee.denied = False
         attendee.save()
