@@ -44,11 +44,12 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-9 col-md-12">
-            <h1>Submit your name</h1>
+            <h1>Your covid report</h1>
             <form action="/submit-name/{{connection_id}}" method="POST" style="max-width: 600px">
               {% csrf_token %}
               <div class="form-group">
-                <label for="name">Full name</label>
+                <label for="name">Health Card:</label>
+                <h3>{{hcn}}</h3>
                 <input type="name" class="form-control" name="name" id="name" placeholder="Jane Jones" required>
               </div>
               <div class="form-group">

@@ -63,7 +63,7 @@ services:
       STI_SCRIPTS_PATH: "/usr/libexec/s2i"
       APP_MODULE: "iiw_book_service.wsgi"
       STAFF_EMAILS: "nick@lucent.is,swcurran@cloudcompass.ca"
-      CONFERENCE_OPTIONS: "IIW,Hyperledger Global Forum"
+      CONFERENCE_OPTIONS: "Positive,Negative"
       WEB_CONCURRENCY: 1
     ports:
       - 7070:8080

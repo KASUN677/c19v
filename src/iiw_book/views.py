@@ -106,11 +106,12 @@ def in_progress(request, connection_id):
 def submit_name(request, connection_id):
     if request.method == "GET":
         get_object_or_404(SessionState, connection_id=connection_id)
+        attd  = Attendee.objects.get(connection_id=connection_id);
         template = loader.get_template("submit_name.html")
         conferences = CONFERENCE_OPTIONS.split(",")
         return HttpResponse(
             template.render(
-                {"connection_id": connection_id, "conferences": conferences}, request
+                {"connection_id": connection_id, "conferences": conferences ,"hcn":attd.hcn}, request
             )
         )
     elif request.method == "POST":
@@ -120,7 +121,7 @@ def submit_name(request, connection_id):
         attendee = Attendee.objects.get(connection_id=connection_id)
         attendee.full_name = full_name
         attendee.conference = conference
-
+        attendee.covid = conference
         attendee.save()
 
         credential_definition_id = cache.get("credential_definition_id")
